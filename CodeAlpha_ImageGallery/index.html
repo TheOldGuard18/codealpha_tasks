@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lumina — Image Gallery</title>
+
+    <meta
+        name="description"
+        content="Lumina is a modern responsive image gallery showcasing beautiful moments."
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container nav-container">
+
+            <a href="#" class="logo">
+                LUMINA<span>.</span>
+            </a>
+
+            <nav class="nav">
+                <a href="#home">Home</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#about">About</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <section class="hero" id="home">
+            <div class="container hero-content">
+
+                <p class="hero-subtitle">A VISUAL COLLECTION</p>
+
+                <h1>
+                    Capture the
+                    <span>Moment.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Explore a collection of moments, places and stories
+                    captured through photography.
+                </p>
+
+                <a href="#gallery" class="hero-button">
+                    Explore Gallery
+                </a>
+
+            </div>
+        </section>
+
+
+        <section class="gallery-section" id="gallery">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <p class="section-label">EXPLORE</p>
+
+                    <h2>Our Gallery</h2>
+
+                    <p>
+                        Browse through our collection and discover
+                        something beautiful.
+                    </p>
+                </div>
+
+
+               <div class="filter-buttons">
+                   <button class="filter-btn active" data-filter="all" aria-pressed="true">All (29)</button>
+                   <button class="filter-btn" data-filter="nature" aria-pressed="false">Nature (8)</button>
+                   <button class="filter-btn" data-filter="cars" aria-pressed="false">Cars (8)</button>
+                   <button class="filter-btn" data-filter="architecture" aria-pressed="false">Architecture (8)</button>
+                   <button class="filter-btn" data-filter="travel" aria-pressed="false">Travel (5)</button>
+                </div>
+
+
+                <div class="gallery-grid" id="galleryGrid">
+
+                    <article class="gallery-item" data-category="nature">
+                        <img
+                            src="images/nature/nature-1.jpg"
+                            alt="Beautiful natural landscape"
+                        >
+
+                        <div class="image-overlay">
+                            <span>Nature</span>
+                            <h3>Into the Wild</h3>
+                        </div>
+                    </article>
+
+
+                    <article class="gallery-item" data-category="cars">
+                        <img
+                            src="images/cars/car-1.jpg"
+                            alt="Luxury car"
+                        >
+
+                        <div class="image-overlay">
+                            <span>Cars</span>
+                            <h3>Motion & Power</h3>
+                        </div>
+                    </article>
+
+
+                    <article class="gallery-item" data-category="architecture">
+                        <img
+                            src="images/architecture/architecture-1.jpg"
+                            alt="Modern architecture"
+                        >
+
+                        <div class="image-overlay">
+                            <span>Architecture</span>
+                            <h3>Modern Lines</h3>
+                        </div>
+                    </article>
+
+
+                    <article class="gallery-item" data-category="travel">
+                        <img
+                            src="images/travel/travel-1.jpg"
+                            alt="Beautiful travel destination"
+                        >
+
+                        <div class="image-overlay">
+                            <span>Travel</span>
+                            <h3>New Horizons</h3>
+                        </div>
+                    </article>
+
+
+                    <article class="gallery-item" data-category="nature">
+                        <img
+                            src="images/nature/nature-2.jpg"
+                            alt="Mountain landscape"
+                        >
+
+                        <div class="image-overlay">
+                            <span>Nature</span>
+                            <h3>Into the Mountains</h3>
+                        </div>
+                    </article>
+
+
+                    <article class="gallery-item" data-category="cars">
+                        <img
+                            src="images/cars/car-2.jpg"
+                            alt="Sports car"
+                        >
+
+                        <div class="image-overlay">
+                            <span>Cars</span>
+                            <h3>Built to Move</h3>
+                        </div>
+                    </article>
+
+
+                    <article class="gallery-item" data-category="architecture">
+                        <img
+                            src="images/architecture/architecture-2.jpg"
+                            alt="City architecture"
+                        >
+
+                        <div class="image-overlay">
+                            <span>Architecture</span>
+                            <h3>City Structures</h3>
+                        </div>
+                    </article>
+
+
+                    <article class="gallery-item" data-category="travel">
+                        <img
+                            src="images/travel/travel-2.jpg"
+                            alt="Travel destination"
+                        >
+
+                        <div class="image-overlay">
+                            <span>Travel</span>
+                            <h3>Beyond Borders</h3>
+                        </div>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="about-section" id="about">
+
+            <div class="container about-content">
+
+                <p class="section-label">ABOUT LUMINA</p>
+
+                <h2>
+                    Every picture
+                    tells a story.
+                </h2>
+
+                <p>
+                    Lumina is a digital gallery created to celebrate
+                    photography, creativity and the beauty of everyday
+                    moments.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+
+    <button class="lightbox-close" id="closeLightbox" aria-label="Close image viewer">&times;</button>
+
+    <button class="lightbox-prev" id="prevImage" aria-label="Show previous image">&#10094;</button>
+
+    <div class="lightbox-content">
+
+        <img id="lightboxImage" src="" alt="">
+
+        <div class="lightbox-info">
+            <span id="lightboxCategory"></span>
+            <h3 id="lightboxTitle"></h3>
+            <p id="lightboxCounter"></p>
+        </div>
+
+    </div>
+
+    <button class="lightbox-next" id="nextImage" aria-label="Show next image">&#10095;</button>
+
+</div>
+
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <p>
+                &copy; 2026 Lumina. Built as part of the
+                CodeAlpha Frontend Development Internship.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>

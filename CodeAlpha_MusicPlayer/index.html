@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Late Shift — Music Player</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main class="player">
+  <header class="player-header">
+    <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="station">late shift <strong>fm</strong></div>
+    <div class="live-status" aria-live="polite"><span class="live-dot"></span> <span id="statusText">ready to listen</span></div>
+  </header>
+
+  <section class="deck" aria-labelledby="trackTitle">
+    <div class="deck-heading">
+      <span class="eyebrow">the after-hours archive</span>
+      <span class="edition">vol. 04 <i></i></span>
+    </div>
+
+    <div class="vinyl-wrap">
+      <div class="vinyl" id="vinyl">
+        <div class="label" id="label">LS<br>45</div>
+      </div>
+      <div class="tonearm" id="tonearm">
+        <svg viewBox="0 0 86 86" fill="none">
+          <circle cx="78" cy="8" r="7" fill="#172622" stroke="#e6a83e" stroke-width="2"/>
+          <line x1="78" y1="8" x2="14" y2="70" stroke="#758078" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="14" cy="70" r="3.5" fill="#e6a83e"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="now-playing">
+      <div class="eyebrow">now spinning <span class="signal">///</span></div>
+      <h1 id="trackTitle">—</h1>
+      <p id="trackArtist">—</p>
+    </div>
+  </section>
+
+  <section class="controls" aria-label="Player controls">
+    <div class="controls-main">
+      <div class="top-row">
+        <span class="tag"><span class="tag-line"></span> side a / night drive</span>
+        <span class="count" id="trackCount">1 / 1</span>
+      </div>
+
+      <div class="progress-row">
+        <span class="time" id="curTime">0:00</span>
+        <div class="groove-track" id="grooveTrack" role="slider" tabindex="0" aria-label="Seek through track" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <div class="rail"></div>
+          <div class="fill" id="progressFill"></div>
+          <div class="knob" id="progressKnob"></div>
+        </div>
+        <span class="time right" id="durTime">0:00</span>
+      </div>
+
+      <div class="transport">
+        <button class="skip shuffle" id="shuffleBtn" type="button" title="Shuffle" aria-label="Toggle shuffle" aria-pressed="false">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 3h4v4h-2V6.41l-3.29 3.3-1.42-1.42L17.59 5H16zm4 14v4h-4v-2h1.59l-3.3-3.29 1.42-1.42L20 17.59V16h1zM3 6h5.17l1 1H3zm10.71 4.29 1.42 1.42-7.71 7.71L6 18l7.71-7.71zM3 18h5.17l-1-1H3z"/></svg>
+        </button>
+        <button class="skip" id="prevBtn" type="button" title="Previous" aria-label="Previous track">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6 9-6v12z"/></svg>
+        </button>
+        <button class="play-btn" id="playBtn" type="button" title="Play/Pause" aria-label="Play">
+          <svg id="playIcon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+        <button class="skip" id="nextBtn" type="button" title="Next" aria-label="Next track">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 6h2v12h-2zM6 6l9 6-9 6z"/></svg>
+        </button>
+        <span class="transport-spacer" aria-hidden="true"></span>
+      </div>
+    </div>
+
+    <div class="bottom-row">
+      <div class="volume">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 10v4h4l5 5V5L7 10H3zm13.5 2a4.5 4.5 0 0 0-2.5-4.03v8.06A4.5 4.5 0 0 0 16.5 12z"/></svg>
+        <input type="range" id="volumeSlider" min="0" max="100" value="70">
+      </div>
+      <button class="autoplay-toggle on" id="autoplayToggle" type="button" aria-pressed="true">
+        <span class="switch"></span>
+        <span>autoplay</span>
+      </button>
+    </div>
+  </section>
+
+  <section class="playlist-section" aria-labelledby="queue-title">
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">tonight's selection</span>
+        <h2 id="queue-title">The queue</h2>
+      </div>
+      <span class="queue-note" id="queueSummary">5 records / loading...</span>
+    </div>
+    <div class="playlist" id="playlist"></div>
+  </section>
+
+  <div class="shortcuts-hint">
+    <span><kbd>Space</kbd> play/pause</span>
+    <span><kbd>&larr;</kbd> <kbd>&rarr;</kbd> prev/next</span>
+    <span><kbd>&uarr;</kbd> <kbd>&darr;</kbd> volume</span>
+    <span><kbd>S</kbd> shuffle</span>
+  </div>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
